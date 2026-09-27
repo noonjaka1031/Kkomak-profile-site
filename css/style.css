@@ -23,10 +23,36 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 반응형 컨테이너: 화면 폭에 따라 좌우 여백과 최대 폭이 단계적으로 변함
+   mobile  : 좌우 여백 16px, 폭 100%
+   tablet  : 좌우 여백 vw 기반으로 증가
+   desktop : 최대 1152px / 와이드(1536px+) : 최대 1408px */
+.site-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+  max-width: 72rem;
+}
+
+@media (min-width: 1536px) {
+  .site-container {
+    max-width: 88rem;
+  }
+}
+
+/* 섹션 공통 세로 여백 (화면 크기에 따라 자동 조절) */
+.section-y {
+  padding-block: clamp(4rem, 10vw, 6rem);
 }
 
 .font-label {
@@ -99,6 +125,19 @@ body {
 
 #mobile-menu.open {
   max-height: 320px;
+}
+
+/* 모션 축소 설정 사용자 배려 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 ::-webkit-scrollbar {
