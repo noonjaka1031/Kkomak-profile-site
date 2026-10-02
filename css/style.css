@@ -103,6 +103,22 @@ body {
   );
 }
 
+/* 포트폴리오 카테고리 카드 (클릭 시 상세 페이지로 이동)
+   호버 효과는 위쪽 라벨 텍스트가 아니라 카드 박스(.portfolio-card-visual)에만 적용 */
+.portfolio-card-visual {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card-link:hover .portfolio-card-visual {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(21, 58, 46, 0.18);
+}
+
+/* 카테고리 상세 페이지의 영상 카드 */
+.portfolio-video-card video {
+  display: block;
+}
+
 /* copy toast */
 .copy-toast {
   opacity: 0;
