@@ -19,7 +19,6 @@ document.querySelectorAll('#mobile-menu a').forEach((link) => {
 });
 
 // scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -31,7 +30,10 @@ const revealObserver = new IntersectionObserver(
   },
   { threshold: 0.15 }
 );
-revealEls.forEach((el) => revealObserver.observe(el));
+// 다른 스크립트(portfolio-render.js 등)에서 동적으로 추가한 요소도
+// 같은 observer에 등록할 수 있도록 전역에 노출
+window.revealObserver = revealObserver;
+document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
 // nav active link highlight on scroll
 const sections = document.querySelectorAll('section[id]');
