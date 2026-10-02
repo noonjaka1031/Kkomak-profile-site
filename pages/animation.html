@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2D애니메이션 | 꼬막무침 포트폴리오</title>
+<meta name="description" content="모션 그래픽 디자이너 꼬막무침의 2D애니메이션 포트폴리오" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "brand-dark": "#153A2E",
+          "brand-green": "#2D6A4F",
+          "brand-green-light": "#3F8760",
+          "brand-sage": "#B7C4B8",
+          "brand-bg": "#EAE8E3",
+          "brand-ink": "#1B1B1B",
+        },
+        fontFamily: {
+          heading: ["'Noto Sans KR'", "sans-serif"],
+          label: ["'Montserrat'", "sans-serif"],
+          kimm: ["'KIMM'", "'Noto Sans KR'", "sans-serif"],
+          scu: ["'SeoulCyberUniv'", "'Noto Sans KR'", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="bg-brand-bg text-brand-ink antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="fixed top-0 left-0 w-full z-50 bg-brand-bg/90 backdrop-blur border-b border-brand-ink/10">
+  <div class="site-container py-4 flex items-center justify-end">
+    <nav class="hidden md:flex items-center gap-8 font-label text-sm uppercase tracking-wider text-brand-ink/80">
+      <a href="../index.html#home" class="nav-link hover:text-brand-green transition-colors">Home</a>
+      <a href="../index.html#skills" class="nav-link hover:text-brand-green transition-colors">Skills</a>
+      <a href="../index.html#portfolio" class="nav-link hover:text-brand-green transition-colors">Portfolio</a>
+      <a href="../index.html#contact" class="nav-link hover:text-brand-green transition-colors">Contact</a>
+    </nav>
+
+    <button id="menu-btn" class="md:hidden p-2 text-brand-dark" aria-label="메뉴 열기">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden">
+    <nav class="site-container flex flex-col pb-4 gap-4 font-label text-sm uppercase tracking-wider text-brand-ink/80">
+      <a href="../index.html#home" class="nav-link">Home</a>
+      <a href="../index.html#skills" class="nav-link">Skills</a>
+      <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="bg-[#E3E1DB] pt-28 md:pt-32 pb-8 md:pb-10">
+  <div class="site-container reveal">
+    <a href="../index.html#portfolio" class="inline-flex items-center gap-2 text-sm text-brand-green font-label mb-6 hover:underline">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+      포트폴리오로 돌아가기
+    </a>
+    <p class="font-label text-xs md:text-sm tracking-[0.2em] text-brand-green mb-3">PORTFOLIO</p>
+    <h1 class="font-scu font-bold text-3xl sm:text-4xl lg:text-5xl text-brand-dark">2D애니메이션</h1>
+  </div>
+</section>
+
+<!-- ============ VIDEO GRID ============ -->
+<section class="bg-[#E3E1DB] pb-16 md:pb-24">
+  <div class="site-container">
+    <div id="portfolio-grid" data-category="animation" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-brand-dark text-white/50 border-t border-white/10">
+  <div class="site-container py-6 flex flex-col sm:flex-row items-center justify-between gap-2 font-label text-xs tracking-wider">
+    <span>&copy; 2026 꼬막무침. All rights reserved.</span>
+    <span>MOTION GRAPHIC DESIGNER PORTFOLIO</span>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+<script src="../js/portfolio-data.js"></script>
+<script src="../js/portfolio-render.js"></script>
+</body>
+</html>
