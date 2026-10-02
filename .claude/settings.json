@@ -2,20 +2,20 @@
   "permissions": {
     "allow": [
       "PowerShell(Start-Process \"C:\\\\Users\\\\ASUS\\\\Desktop\\\\workspaces\\\\my-profile-site\\\\index.html\")",
+
+      "Read(//c/Users/ASUS/Desktop/workspaces/my-profile-site/**)",
+
       "Bash(python3 -c \"import PIL; print\\(PIL.__version__\\)\")",
       "Bash(python -c \"import PIL; print\\(PIL.__version__\\)\")",
-      "Bash(python3 -m pip install --quiet Pillow)",
+
       "Bash(python3 -m pip --version)",
       "Bash(python3 -m pip install Pillow)",
+      "Bash(python3 -m pip install --quiet Pillow)",
+
       "Bash(python3 -c \"print\\('hello'\\)\")",
-      "Read(//c/Users/ASUS/**)",
-      "Read(//c/Users/ASUS/.claude/**)",
-      "Bash(python3 *)",
-      "Bash(python *)",
+
       "Bash(echo *)",
-      "Bash(command -v jq)",
-      "Bash(cd *)",
-      "Bash(taskkill *)"
+      "Bash(command -v jq)"
     ]
   }
 }
