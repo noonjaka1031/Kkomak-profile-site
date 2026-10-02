@@ -1,5 +1,7 @@
 {
-  "outputStyle": "kkomak Freindly",
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+
+  "outputStyle": "default",
 
   "permissions": {
     "defaultMode": "plan",
@@ -8,6 +10,14 @@
       "PowerShell(Start-Process \"C:\\\\Users\\\\ASUS\\\\Desktop\\\\workspaces\\\\my-profile-site\\\\index.html\")",
 
       "Read(//c/Users/ASUS/Desktop/workspaces/my-profile-site/**)",
+
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git commit *)",
 
       "Bash(python3 -c \"import PIL; print\\(PIL.__version__\\)\")",
       "Bash(python -c \"import PIL; print\\(PIL.__version__\\)\")",
@@ -20,6 +30,10 @@
 
       "Bash(echo *)",
       "Bash(command -v jq)"
+    ],
+
+    "deny": [
+      "Bash(git push *)"
     ]
   }
 }
